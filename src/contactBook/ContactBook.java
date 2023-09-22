@@ -1,6 +1,9 @@
 package contactBook;
 
-import contactBook.Contact;
+import java.util.HashSet;
+import java.util.Set;
+
+// import contactBook.Contact;
 
 public class ContactBook {
     static final int DEFAULT_SIZE = 100;
@@ -93,4 +96,17 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+	public String checkEqualPhones() {
+        Set<Integer> phoneNumbers = new HashSet<>();
+
+        for (int i = 0; i < counter; i++) {
+            int phone = contacts[i].getPhone();
+            if (phoneNumbers.contains(phone)) {
+                return "There are contacts that share phone numbers.";
+            }
+            phoneNumbers.add(phone);
+        }
+
+        return "All contacts have different phone numbers.";
+    }
 }
