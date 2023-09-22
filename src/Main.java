@@ -56,6 +56,7 @@ public class Main {
                     break;
 				case EQUAL_PHONES:
 					checkEqualPhones(cBook);
+					break;
                 default:
                     System.out.println(COMMAND_ERROR);
             }
